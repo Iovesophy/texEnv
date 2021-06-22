@@ -3,10 +3,14 @@ IMAGE:=paperist/alpine-texlive-ja
 WORK_DIR:=/workdir
 TARGETS=$(foreach FILE, $(FILES), $(FILE).pdf)
 
-.PHONY: all clean distclean
-all: clean distclean $(TARGETS)
+.PHONY: all
+all: $(TARGETS)
+
+.PHONY: clean
 clean:
 	$(RM) *.aux *.log *.dvi
+
+.PHONY: distclean
 distclean: clean
 	$(RM) $(TARGETS)
 
