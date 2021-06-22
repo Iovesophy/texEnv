@@ -1,7 +1,7 @@
 FILES:=hello
 IMAGE:=paperist/alpine-texlive-ja
 WORK_DIR:=/workdir
-TARGETS=$(foreach FILE, $(FILES), $(FILE).pdf)
+TARGETS=$(foreach file, $(FILES), $(file).pdf)
 
 .PHONY: all
 all: $(TARGETS)
